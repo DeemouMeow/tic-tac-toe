@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff9999;
+    --dark: #303c4f;
+    --winning-blocks: rgb(44, 53, 68);
+}
+
+body {
+    color: var(--pink);
+    font-family: 'VT323', monospace; /*'EB Garamond', italic;*/
+}
+
+h1 {
+    font-size: 55px;
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative;
+
+    padding: 100px;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: var(--dark);
+}
+
+#gameboard {
+    width: 450px;
+    margin-top: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field {
+    height: 150px;
+    width: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--pink);
+
+    font-size: 130px;
+
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.field:nth-child(3n) {
+    border-right: none;
+}
+
+.field:nth-child(6) ~ .field {
+    border-bottom: none;
+}
+
+button {
+    margin-top: 25px;
+    padding: 10px 20px;
+
+    background-color: var(--pink);
+    color: #333;
+    
+    border-color: var(--pink);
+    border-radius: 10px;
+
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: 200ms transform;
+
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.startWindow {
+    position: absolute;
+    padding: 10px;
+
+    width: 700px;
+    height: 500px;
+
+    align-self: center;
+
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 25%;
+    border: 7px solid #ff6d6d;
+
+    animation: up_down 3s linear infinite;
+}
+
+@keyframes up_down {
+    0% {top: 250px;}
+    25% {top: 260px;}
+    50% {top: 270px;}
+    75% {top: 260px;}
+    100% {top: 250px}
+}
